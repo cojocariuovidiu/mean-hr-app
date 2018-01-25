@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const employeeRouter = require('./routes/employee.router');
+const reportsRouter = require('./routes/reports.router');
 
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -9,6 +11,8 @@ app.use(bodyParser.json()); // needed for angular requests
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+app.use('/employee', employeeRouter);
+app.use('/reports', reportsRouter);
 
 /** ---------- MONGOOSE ------------ **/
 const mongoose = require('mongoose');
