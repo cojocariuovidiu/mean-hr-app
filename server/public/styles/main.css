@@ -25,7 +25,12 @@ form {
     text-align: center;
 }
 
+.column-info {
+    text-align: center;
+}
+
 .btn-container {
     display: flex;
     justify-content: center;
+
 }
