@@ -10,13 +10,13 @@ let Employee = mongoose.model('Employee', employeeSchema);
 router.get('/min', (req,res)=>{
     Employee.aggregate([
         {$group: 
-            {_id: "$_v", minSalary: {$min: "$salary"}}}
+            {_id: "$company", minSalary: {$min: "$salary"}}}
         ], (error, minSalary) => {
             if(error) {
-                console.log('error on save', error);
+                console.log('error get min salary', error);
                 res.sendStatus(500);
             } else {
-                console.log('found games: ', minSalary);
+                console.log('found min salary: ', minSalary);
                 res.send(minSalary);
             }
         })
@@ -28,10 +28,10 @@ router.get('/max', (req,res)=>{
             {_id: "$_v", minSalary: {$max: "$salary"}}}
         ], (error, maxSalary) => {
             if(error) {
-                console.log('error on save', error);
+                console.log('error get max salary', error);
                 res.sendStatus(500);
             } else {
-                console.log('found games: ', maxSalary);
+                console.log('found max salary: ', maxSalary);
                 res.send(maxSalary);
             }
         })
@@ -43,10 +43,10 @@ router.get('/avg', (req,res)=>{
             {_id: "$_v", minSalary: {$avg: "$salary"}}}
         ], (error, avgSalary) => {
             if(error) {
-                console.log('error on save', error);
+                console.log('error get avg salary', error);
                 res.sendStatus(500);
             } else {
-                console.log('found games: ', avgSalary);
+                console.log('found avg salary: ', avgSalary);
                 res.send(avgSalary);
             }
         })
@@ -55,10 +55,10 @@ router.get('/avg', (req,res)=>{
 router.get('/employeeCount', (req,res)=>{
     Employee.count({}, (error, employeeCount) => {
             if(error) {
-                console.log('error on save', error);
+                console.log('error get employee count', error);
                 res.sendStatus(500);
             } else {
-                console.log('found games: ', employeeCount);
+                console.log('found employee count: ', employeeCount);
                 let numberOfEmployees = { count: employeeCount}
                 res.send(numberOfEmployees);
             }
@@ -68,10 +68,10 @@ router.get('/employeeCount', (req,res)=>{
 router.get('/titles', (req,res)=>{
     Employee.find({}, (error, jobTitles) => {
         if(error) {
-            console.log('error on save', error);
+            console.log('error get job titles', error);
             res.sendStatus(500);
         } else {
-            console.log('found games: ', jobTitles);
+            console.log('found job titles: ', jobTitles);
             res.send(jobTitles);
         }
     })
