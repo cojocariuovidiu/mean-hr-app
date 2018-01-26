@@ -19,7 +19,7 @@ myApp.service('EmployeeService', ['$http', function($http){
     }
     // Deleting employee by Id
     self.deleteEmployee = function (employeeId) {
-        $http.put(`/employee/${employeeId}`)
+        $http.delete(`/employee/${employeeId}`)
         .then(function (response) {
             console.log('successful deleteEmployee: ', response);
             self.getEmployee();  
