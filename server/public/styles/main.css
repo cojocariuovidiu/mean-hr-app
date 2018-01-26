@@ -1,0 +1,26 @@
+
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: rgb(255,64,129);
+    color: white;
+}
+
+
+th, td {
+    padding: 10px 20px;
+    border-bottom: 1px solid grey;
+}
+
+form {
+    border: 1px solid rgb(255,64,129);
+    padding: 20px;
+}
+
+.column-heading {
+    text-align: center;
+}
