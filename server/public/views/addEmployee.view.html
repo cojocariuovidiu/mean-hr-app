@@ -1,4 +1,4 @@
-<div layout="column" layout-align="center center" ng-cloak class="md-inline-form">
+<div layout="column" layout-align="center center" class="md-inline-form">
 
     <h1>Add Employee</h1>
     <form>
@@ -40,11 +40,8 @@
                 </md-input-container>
             </div>
         </md-content>
-
-        <md-content>
-            <div>
-                <md-button ng-click="vm.addEmployee(vm.newEmployee)" class="submitEmployee" type="submit">Submit</md-button>
-            </div>
-        </md-content>
+        <div class="btn-container">
+            <md-button ng-click="vm.addEmployee(vm.newEmployee)" class="md-raised md-primary">Submit</md-button>
+        </div>
       </form>
 </div>

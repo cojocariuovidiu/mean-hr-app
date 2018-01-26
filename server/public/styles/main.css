@@ -1,4 +1,3 @@
-
 table {
     margin: 0 auto;
     margin-top: 20px;
@@ -13,14 +12,20 @@ thead {
 
 th, td {
     padding: 10px 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid lightgrey;
 }
 
 form {
     border: 1px solid rgb(255,64,129);
+    box-shadow: 5px 5px 10px darkgrey;
     padding: 20px;
 }
 
 .column-heading {
     text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
 }
