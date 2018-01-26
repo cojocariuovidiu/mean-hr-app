@@ -1,35 +1,48 @@
-<div layout="column" ng-cloak class="md-inline-form">
-    <md-content layout-gt-sm="row">
-            <md-input-container>
-                <label>First Name</label>
-                <input type="text" ng-model="vm.newEmployee.firstName">
-            </md-input-container>
-            <md-input-container>
-                <label>Last Name</label>
-                <input type="text" ng-model="vm.newEmployee.lastName">
-            </md-input-container>   
-    </md-content>
-    <md-content layout-gt-sm="row">
-            <md-input-container>
-                <label>Employee ID</label>
-                <input type="number" ng-model="vm.newEmployee.employeeId">
-            </md-input-container>
-            <md-input-container>
-                <label>Job Title</label>
-                <input type="text" ng-model="vm.newEmployee.jobTitle">
-            </md-input-container>
-    </md-content>
-    <md-content layout-gt-sm="row">
-            <md-input-container>
-                <label>Hire Date</label>
-                <input type="date" ng-model="vm.newEmployee.hireDate">
-            </md-input-container>
-            <md-input-container>
-                <label>Salary</label>
-                <input type="text" ng-model="vm.newEmployee.salary">
-            </md-input-container>
-    </md-content>
-    <md-content layout-gt-sm="row">
-            <md-button ng-click="vm.addEmployee(vm.newEmployee)" type="submit">Submit</md-button>
-    </md-content>
+
+<div layout="column" layout-align="center center" class="md-inline-form">
+
+    <h1>Add Employee</h1>
+    <form>
+        <md-content layout-padding>
+            <div>
+                <md-input-container>
+                    <label>First Name</label>
+                    <input type="text" ng-model="vm.newEmployee.firstName">
+                </md-input-container>
+                <md-input-container>
+                    <label>Last Name</label>
+                    <input type="text" ng-model="vm.newEmployee.lastName">
+                </md-input-container> 
+            </div>  
+        </md-content>
+
+        <md-content layout-padding>
+            <div>
+                <md-input-container>
+                    <label>Employee ID</label>
+                    <input type="number" ng-model="vm.newEmployee.employeeId">
+                </md-input-container>
+                <md-input-container>
+                    <label>Job Title</label>
+                    <input type="text" ng-model="vm.newEmployee.jobTitle">
+                </md-input-container>
+            </div>
+        </md-content>
+
+        <md-content layout-padding>
+            <div>
+                <md-input-container>
+                    <label>Hire Date</label>
+                    <input type="date" ng-model="vm.newEmployee.hireDate">
+                </md-input-container>
+                <md-input-container>
+                    <label>Salary</label>
+                    <input type="text" ng-model="vm.newEmployee.salary">
+                </md-input-container>
+            </div>
+        </md-content>
+        <div class="btn-container">
+            <md-button ng-click="vm.addEmployee(vm.newEmployee)" class="md-raised md-primary">Submit</md-button>
+        </div>
+      </form>
 </div>
