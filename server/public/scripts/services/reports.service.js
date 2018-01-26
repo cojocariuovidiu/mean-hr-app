@@ -3,19 +3,19 @@ myApp.service('ReportsService', ['$http', function($http){
 
     const self = this;
 
-    self.minSalary = {list: []}
-    self.maxSalary = {list: []}
-    self.avgSalary = {list: []}
-    self.employeeCount = {list: []}
-    self.jobTitles = {list: []}
-
-
+    self.employeeInfo = {
+        minSalary: {},
+        maxSalary: {},
+        avgSalary: {},
+        employeeCount: {},
+        jobTitles: {list: []}
+    }
 
     self.getMinSalary = function() {
         $http.get('/reports/min')
             .then(function (response) {
                 console.log('successful getMinSalary request: ', response);
-                self.minSalary.list = response.data;
+                self.employeeInfo.minSalary = response.data[0].minSalary;
             })
             .catch(function (response) {
                 console.log('error on getMinSalary request :', response);
@@ -26,7 +26,7 @@ myApp.service('ReportsService', ['$http', function($http){
         $http.get('/reports/max')
             .then(function (response) {
                 console.log('successful getMaxSalary request: ', response);
-                self.maxSalary.list = response.data; 
+                self.employeeInfo.maxSalary = response.data[0].maxSalary; 
             })
             .catch(function (response) {
                 console.log('error on getMaxSalary request :', response);
@@ -37,7 +37,7 @@ myApp.service('ReportsService', ['$http', function($http){
         $http.get('/reports/avg')
             .then(function (response) {
                 console.log('successful getAvgSalary request: ', response);
-                self.avgSalary.list = response.data;
+                self.employeeInfo.avgSalary = response.data[0].avgSalary;
             })
             .catch(function (response) {
                 console.log('error on getAvgSalary request :', response);
@@ -48,7 +48,7 @@ myApp.service('ReportsService', ['$http', function($http){
         $http.get('/reports/employeeCount')
             .then(function (response) {
                 console.log('successful getEmployeeCount request: ', response);
-                self.employeeCount.list = response.data;
+                self.employeeInfo.employeeCount = response.data.count;
             })
             .catch(function (response) {
                 console.log('error on getEmployeeCount request :', response);
@@ -59,7 +59,7 @@ myApp.service('ReportsService', ['$http', function($http){
         $http.get('/reports/titles')
             .then(function (response) {
                 console.log('successful getJobTitles request: ', response);
-                self.jobTitles.list = response.data;  
+                self.employeeInfo.jobTitles.list = response.data;  
             })
             .catch(function (response) {
                 console.log('error on getJobTitles request :', response);
