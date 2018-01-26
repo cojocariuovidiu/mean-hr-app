@@ -32,5 +32,4 @@ myApp.controller('ReportsController', ['ReportsService', function(ReportsService
     self.getAvgSalary();
     self.getEmployeeCount();
     self.getJobTitles();
-
 }]);
