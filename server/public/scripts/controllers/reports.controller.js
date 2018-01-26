@@ -4,7 +4,7 @@ myApp.controller('ReportsController', ['ReportsService', function(ReportsService
 
     self.employeeInfo = ReportsService.employeeInfo;
 
-    console.log(self.employeeInfo);
+    console.log('hey', self.employeeInfo);
     
     
     self.getMinSalary = function() {
