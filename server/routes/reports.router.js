@@ -5,5 +5,4 @@ const employeeSchemaModule = require('../modules/schema.module');
 
 let employeeSchema = employeeSchemaModule;
 
-
 module.exports = router;
