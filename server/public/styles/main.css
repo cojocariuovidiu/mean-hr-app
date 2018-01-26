@@ -1,3 +1,4 @@
+
 table {
     margin: 0 auto;
     margin-top: 20px;
@@ -20,3 +21,6 @@ form {
     padding: 20px;
 }
 
+.column-heading {
+    text-align: center;
+}
