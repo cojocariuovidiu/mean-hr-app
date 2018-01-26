@@ -29,7 +29,9 @@ myApp.service('EmployeeService', ['$http', function($http){
     
     // updating employee by Id
     self.updateEmployee = function (employee) {
-        $http.put(`/employee/${employeeId}`, employee)
+        console.log('updateEmployee clicked');
+        
+        $http.put(`/employee/${employee._id}`, employee)
         .then(function (response) {
             console.log('successful updateEmployee: ', response);
             self.getEmployee();  
