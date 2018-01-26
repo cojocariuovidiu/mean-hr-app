@@ -5,30 +5,6 @@ myApp.service('EmployeeService', ['$http', function($http){
     // create an array inside an object
     self.employee = {list: []};
 
-    
-    // updating employee by Id
-    self.updateEmployee = function (employee) {
-        $http.put(`/employee/${employeeId}`, employee)
-        .then(function (response) {
-            console.log('successful updateEmployee: ', response);
-            self.getEmployee();  
-        })
-        .catch(function (response) {
-            console.log('error on updatedEmployee :', response);
-        })
-    }
-    // Deleting employee by Id
-    self.deleteEmployee = function (employeeId) {
-        $http.put(`/employee/${employeeId}`)
-        .then(function (response) {
-            console.log('successful deleteEmployee: ', response);
-            self.getEmployee();  
-        })
-        .catch(function (response) {
-            console.log('error on deleteEmployee :', response);
-        })
-    }
-
     self.getEmployee = function() {
         $http.get('/employee')
             .then(function(response){
@@ -49,6 +25,32 @@ myApp.service('EmployeeService', ['$http', function($http){
                 console.log('error on POST request');
                 
             });
+    }
+    
+    // updating employee by Id
+    self.updateEmployee = function (employee) {
+        $http.put(`/employee/${employeeId}`, employee)
+        .then(function (response) {
+            console.log('successful updateEmployee: ', response);
+            self.getEmployee();  
+        })
+        .catch(function (response) {
+            console.log('error on updatedEmployee :', response);
+        })
+    }
+
+    // Deleting employee by Id
+    self.deleteEmployee = function (employeeId) {
+        console.log('in deleteEmployee');
+        
+        $http.delete(`/employee/${employeeId}`)
+        .then(function (response) {
+            console.log('successful deleteEmployee: ', response);
+            self.getEmployee();  
+        })
+        .catch(function (response) {
+            console.log('error on deleteEmployee :', response);
+        })
     }
     
     self.getEmployee();
