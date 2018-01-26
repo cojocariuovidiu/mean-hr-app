@@ -17,29 +17,25 @@
             <td>{{employee.salary}}</td>
             <td>{{employee.jobTitle}}</td>
             <td>{{employee.hireDate | date: 'M/d/yyyy'}}</td>
-            <td><md-button class="md-primary" ng-click="mc.showAdvanced($event)">Update</md-button></td>
+            <td><md-button class="md-primary" ng-click="vm.openFormUpdateEmployee(employee)">Update</md-button></td>
             <td><md-button class="md-primary" ng-click="vm.deleteEmployee(employee._id)">Delete</md-button></td>
-            <!-- <md-dialog aria-label="{{employee.firstName}} {{employee.lastName}}">
-                {{employee.firstName}}
-            </md-dialog> -->
         </tr>
     </tbody>
 </table>
-
 <md-content layout-gt-sm="row">
     <md-input-container>
         <label>First Name</label>
-        <input type="text" ng-model="vm.newEmployee.firstName">
+        <input type="text" ng-value="{{employee.firstName}}" ng-model="vm.employeeInfo.firstName">
     </md-input-container>
     <md-input-container>
         <label>Last Name</label>
-        <input type="text" ng-model="vm.newEmployee.lastName">
+        <input type="text" ng-value="{{employee.lastName}}" ng-model="vm.employeeInfo.lastName">
     </md-input-container>   
     <md-input-container>
         <label>Job Title</label>
-        <input type="text" ng-model="vm.newEmployee.jobTitle">
+        <input type="text" ng-value="{{employee.jobTitle}}" ng-model="vm.employeeInfo.jobTitle">
     </md-input-container>
 </md-content>
 <md-content layout-gt-sm="row">
-    <md-button ng-click="vm.addEmployee(vm.newEmployee)" type="submit">Submit</md-button>
+    <md-button ng-click="vm.updateEmployee(vm.employeeInfo)" type="submit">Submit</md-button>
 </md-content>
