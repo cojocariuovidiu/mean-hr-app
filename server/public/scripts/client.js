@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
 // app configuration
-app.config(function($routeProvider) {
+myApp.config(function($routeProvider) {
     console.log('config loaded');
     // define our client side routes
     $routeProvider
