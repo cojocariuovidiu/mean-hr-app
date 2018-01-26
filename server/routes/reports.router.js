@@ -25,7 +25,7 @@ router.get('/min', (req,res)=>{
 router.get('/max', (req,res)=>{
     Employee.aggregate([
         {$group: 
-            {_id: "$_v", minSalary: {$max: "$salary"}}}
+            {_id: "$_v", maxSalary: {$max: "$salary"}}}
         ], (error, maxSalary) => {
             if(error) {
                 console.log('error get max salary', error);
@@ -40,7 +40,7 @@ router.get('/max', (req,res)=>{
 router.get('/avg', (req,res)=>{
     Employee.aggregate([
         {$group: 
-            {_id: "$_v", minSalary: {$avg: "$salary"}}}
+            {_id: "$_v", avgSalary: {$avg: "$salary"}}}
         ], (error, avgSalary) => {
             if(error) {
                 console.log('error get avg salary', error);
